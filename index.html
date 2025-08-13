@@ -3,66 +3,97 @@
 <head>
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
-<title>Gerenciador de Fiados com Pagamentos Agrupados</title>
+<title>Gerenciador de Fiados - Estilo Jogo Infantil 🍭</title>
 <style>
+  @import url('https://fonts.googleapis.com/css2?family=Comic+Neue:wght@700&family=Gloria+Hallelujah&display=swap');
+
   body {
     max-width: 700px;
     margin: 30px auto;
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    background-color: #fff8f0;
-    color: #4a2c00;
+    font-family: 'Gloria Hallelujah', cursive, 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background: linear-gradient(135deg, #fff8f0 0%, #ffe4c4 100%);
+    color: #6b3e00;
     padding: 20px;
     line-height: 1.5;
+    user-select: none;
   }
   h1 {
     text-align: center;
-    color: #d2691e;
+    color: #e65100;
     margin-bottom: 25px;
+    font-family: 'Comic Neue', cursive;
+    font-size: 2.8rem;
+    text-shadow: 1px 1px 0 #ffa726;
+    letter-spacing: 1.5px;
   }
   section {
-    background: #ffe5b4;
-    border-radius: 10px;
-    padding: 20px;
-    box-shadow: 0 0 10px rgba(210,105,30,0.3);
-    margin-bottom: 35px;
+    background: #fff5db;
+    border-radius: 16px;
+    padding: 22px 25px;
+    box-shadow: 0 6px 15px rgba(255, 140, 0, 0.3);
+    margin-bottom: 38px;
+    border: 3px solid #ffa726;
   }
   section h2 {
     font-weight: 700;
-    border-bottom: 2px solid #d2691e;
-    padding-bottom: 8px;
-    margin-bottom: 18px;
-    color: #a0522d;
+    border-bottom: 3px dashed #fb8c00;
+    padding-bottom: 10px;
+    margin-bottom: 20px;
+    color: #d35400;
+    font-family: 'Comic Neue', cursive;
+    font-size: 1.9rem;
     display: flex;
     justify-content: space-between;
     align-items: center;
+    text-shadow: 1px 1px 1px #ffcc80;
   }
   section h2 button {
-    background-color: #a0522d;
+    background-color: #ff9800;
     color: white;
     border: none;
-    padding: 8px 14px;
-    border-radius: 6px;
+    padding: 12px 20px;
+    border-radius: 18px;
     cursor: pointer;
-    font-weight: 700;
+    font-weight: 900;
+    font-family: 'Comic Neue', cursive;
+    font-size: 1.2rem;
+    box-shadow: 0 0 15px #ffb74d;
+    animation: pulse 2.5s infinite;
     transition: background-color 0.3s ease;
+    user-select: none;
   }
   section h2 button:hover {
-    background-color: #7b3b12;
+    background-color: #e65100;
+    box-shadow: 0 0 25px #ff6f00;
+  }
+  @keyframes pulse {
+    0%, 100% {
+      box-shadow: 0 0 15px #ffb74d;
+      transform: scale(1);
+    }
+    50% {
+      box-shadow: 0 0 30px #ffcc80;
+      transform: scale(1.08);
+    }
   }
   ul {
     list-style: none;
     padding-left: 0;
   }
   li {
-    background: #fff2d1;
-    border-radius: 8px;
-    padding: 14px 16px;
-    box-shadow: 0 0 8px rgba(210,105,30,0.3);
-    margin-bottom: 12px;
+    background: #fff0c1;
+    border-radius: 14px;
+    padding: 16px 18px;
+    box-shadow: 0 3px 10px rgba(255, 152, 0, 0.3);
+    margin-bottom: 14px;
     display: flex;
     flex-wrap: wrap;
     align-items: center;
-    gap: 10px;
+    gap: 14px;
+    font-family: 'Comic Neue', cursive;
+    font-size: 1.1rem;
+    color: #6e3f00;
+    text-shadow: 1px 1px 2px #ffc107aa;
   }
   .info {
     flex-grow: 1;
@@ -70,51 +101,82 @@
     cursor: default;
   }
   .info strong {
-    color: #8b4513;
-    font-size: 1.1em;
+    color: #bf360c;
+    font-size: 1.2em;
+    text-shadow: 2px 2px 4px #ffcc80;
   }
   .info em {
-    color: #6e3f00;
+    color: #8d4b00;
     font-style: italic;
   }
   .status {
-    font-weight: 700;
+    font-weight: 900;
     min-width: 140px;
     text-align: center;
-  }
-  .status.pago {
-    color: green;
-  }
-  .status.parcial {
-    color: #b36b00;
-  }
-  button.action-btn {
-    background-color: #a0522d;
-    border: none;
-    color: white;
     padding: 6px 12px;
-    border-radius: 6px;
-    cursor: pointer;
-    font-weight: 600;
-    transition: background-color 0.3s ease;
+    border-radius: 14px;
+    background: #ffcc80cc;
+    box-shadow: 0 0 10px #ffa72688;
     user-select: none;
   }
+  .status.pago {
+    color: #2e7d32;
+    background: #c8e6c9cc;
+    box-shadow: 0 0 12px #43a047aa;
+  }
+  .status.parcial {
+    color: #ef6c00;
+    background: #ffe0b2cc;
+    box-shadow: 0 0 12px #fb8c00aa;
+  }
+  button.action-btn {
+    background-color: #ffb74d;
+    border: none;
+    color: #5d2600;
+    padding: 8px 16px;
+    border-radius: 20px;
+    cursor: pointer;
+    font-weight: 700;
+    font-family: 'Comic Neue', cursive;
+    font-size: 1rem;
+    box-shadow: 0 0 12px #ffa726aa;
+    user-select: none;
+    transition: background-color 0.4s ease, transform 0.2s ease;
+    animation: buttonPulse 3s infinite;
+  }
   button.action-btn:hover {
-    background-color: #7b3b12;
+    background-color: #f57c00;
+    color: white;
+    transform: scale(1.1);
+    box-shadow: 0 0 20px #fb8c00ff;
   }
   button.delete-btn {
-    background-color: #c0392b;
+    background-color: #e57373;
+    color: #5d1a1a;
+    box-shadow: 0 0 15px #ef5350aa;
   }
   button.delete-btn:hover {
-    background-color: #8e261c;
+    background-color: #c62828;
+    color: white;
+    box-shadow: 0 0 25px #b71c1cff;
+  }
+  @keyframes buttonPulse {
+    0%, 100% {
+      box-shadow: 0 0 12px #ffa726aa;
+    }
+    50% {
+      box-shadow: 0 0 25px #ffcc80ff;
+    }
   }
   .subtotal, .total {
-    font-weight: 700;
-    font-size: 1.2em;
-    margin-top: 10px;
-    color: #a0522d;
+    font-weight: 900;
+    font-size: 1.4rem;
+    margin-top: 14px;
+    color: #d35400;
     user-select: text;
     text-align: right;
+    font-family: 'Comic Neue', cursive;
+    text-shadow: 1px 1px 3px #ffb74dcc;
   }
   /* Modal */
   #formModal {
@@ -123,65 +185,102 @@
     top:0; left:0;
     width: 100%;
     height: 100%;
-    background: rgba(0,0,0,0.35);
+    background: rgba(255, 183, 77, 0.85);
     justify-content: center;
     align-items: center;
     z-index: 1100;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.35s ease;
+  }
+  #formModal.show {
+    display: flex;
+    opacity: 1;
+    pointer-events: auto;
   }
   #formModal form {
-    background: #fff8f0;
-    padding: 25px 30px;
-    border-radius: 10px;
+    background: #fff3e0;
+    padding: 30px 36px;
+    border-radius: 18px;
     width: 100%;
-    max-width: 450px;
-    box-shadow: 0 0 15px rgba(210,105,30,0.7);
+    max-width: 480px;
+    box-shadow: 0 0 25px rgba(255, 152, 0, 0.6);
+    transform: translateY(-25px);
+    transition: transform 0.35s ease;
+    font-family: 'Comic Neue', cursive;
+    font-size: 1.1rem;
+    color: #5d2600;
+    text-shadow: 1px 1px 1px #ffb74dcc;
+  }
+  #formModal.show form {
+    transform: translateY(0);
   }
   #formModal h3 {
-    margin-bottom: 20px;
-    color: #a0522d;
+    margin-bottom: 22px;
+    color: #d35400;
     text-align: center;
+    font-size: 2rem;
+    text-shadow: 2px 2px 5px #fb8c00aa;
   }
   .input-group {
-    margin-bottom: 18px;
+    margin-bottom: 20px;
   }
   label {
     display: block;
-    margin-bottom: 6px;
-    font-weight: 600;
-    color: #8b4513;
+    margin-bottom: 8px;
+    font-weight: 700;
+    color: #a0522d;
+    text-shadow: 1px 1px 0 #ffcc80;
   }
   input[type="text"], input[type="number"] {
     width: 100%;
-    padding: 8px 10px;
-    border-radius: 6px;
-    border: 1px solid #a0522d;
-    font-size: 1em;
+    padding: 12px 14px;
+    border-radius: 14px;
+    border: 2px solid #ffa726;
+    font-size: 1.1rem;
+    font-family: 'Comic Neue', cursive;
+    color: #6b3e00;
+    box-shadow: inset 1px 1px 5px #ffcc80cc;
+    transition: border-color 0.3s ease;
+  }
+  input[type="text"]:focus, input[type="number"]:focus {
+    border-color: #ff6f00;
+    outline: none;
+    box-shadow: 0 0 12px #ffb74d;
   }
   #formModal .btn-row {
     display: flex;
     justify-content: flex-end;
-    gap: 12px;
+    gap: 14px;
   }
   #formModal button {
-    padding: 8px 16px;
-    font-weight: 700;
-    border-radius: 6px;
+    padding: 12px 24px;
+    font-weight: 900;
+    border-radius: 22px;
     border: none;
     cursor: pointer;
+    font-family: 'Comic Neue', cursive;
+    font-size: 1.1rem;
+    user-select: none;
+    box-shadow: 0 0 18px #ffa726bb;
+    transition: background-color 0.3s ease, box-shadow 0.3s ease;
   }
   #cancelBtn {
-    background: #ccc;
-    color: #333;
+    background: #d7ccc8;
+    color: #4e342e;
+    box-shadow: 0 0 15px #bcaaa4bb;
   }
   #cancelBtn:hover {
-    background: #aaa;
+    background: #bcaaa4;
+    box-shadow: 0 0 20px #8d6e63;
   }
   #saveBtn {
-    background: #a0522d;
+    background: #ff9800;
     color: white;
   }
   #saveBtn:hover {
-    background: #7b3b12;
+    background: #e65100;
+    box-shadow: 0 0 25px #ff6f00;
   }
   @media (max-width: 520px) {
     li {
@@ -192,10 +291,50 @@
       min-width: auto;
       width: 100%;
       text-align: left;
+      margin-top: 6px;
     }
     button.action-btn {
       width: 100%;
     }
+  }
+
+  /* Notify */
+  #notify {
+    position: fixed;
+    top: 24px;
+    right: 24px;
+    min-width: 280px;
+    max-width: 320px;
+    background: #ffd54f;
+    border: 3px solid #ffb300;
+    border-radius: 24px;
+    padding: 16px 22px;
+    box-shadow: 0 0 30px #ffb300bb;
+    font-family: 'Comic Neue', cursive;
+    font-weight: 700;
+    font-size: 1.2rem;
+    color: #5d2600;
+    text-align: center;
+    user-select: none;
+    opacity: 0;
+    pointer-events: none;
+    z-index: 1500;
+    transform: translateX(100%);
+    transition: opacity 0.5s ease, transform 0.5s ease;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+  }
+  #notify.show {
+    opacity: 1;
+    pointer-events: auto;
+    transform: translateX(0);
+  }
+  #notify svg {
+    width: 28px;
+    height: 28px;
+    fill: #ff6f00;
+    filter: drop-shadow(0 0 1.5px #ffa726);
   }
 </style>
 </head>
@@ -206,7 +345,7 @@
 <section id="fiadosPendentesSection">
   <h2>
     Fiados Pendentes
-    <button id="btnAddFiado">➕ Adicionar Fiado</button>
+    <button id="btnAddFiado" aria-label="Adicionar novo fiado">➕ Adicionar Fiado</button>
   </h2>
   <ul id="fiadosPendentesList">
     <!-- Itens fiados pendentes -->
@@ -217,7 +356,7 @@
 <section id="pagamentosRealizadosSection">
   <h2>
     ✅ Pagamentos Realizados (Agrupados por Nome)
-    <button id="btnAddPagamento">➕ Adicionar Pagamento Manual</button>
+    <button id="btnAddPagamento" aria-label="Adicionar novo pagamento manual">➕ Adicionar Pagamento Manual</button>
   </h2>
   <ul id="pagamentosRealizadosList">
     <!-- Itens pagamentos -->
@@ -226,7 +365,7 @@
 </section>
 
 <!-- Modal para adicionar/editar -->
-<div id="formModal">
+<div id="formModal" role="dialog" aria-modal="true" aria-labelledby="formTitle">
   <form id="formEntrada">
     <h3 id="formTitle">Adicionar Entrada</h3>
 
@@ -250,22 +389,24 @@
   </form>
 </div>
 
+<!-- Notificação -->
+<div id="notify" role="alert" aria-live="assertive" aria-atomic="true" style="display:none;">
+  <svg viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm.88 15h-1.75v-1.75h1.75V17zm0-3.5h-1.75V7h1.75v6.5z"/></svg>
+  <span id="notifyMessage">Mensagem</span>
+</div>
+
 <script>
-  // Chaves para localStorage
-  const STORAGE_FIADOS_KEY = "fiadosPendentes";
-  const STORAGE_PAGAMENTOS_KEY = "pagamentosRealizados";
+  let fiadosPendentes = [];
+  let pagamentosRealizados = [];
 
-  // Carrega os dados do localStorage, ou inicializa arrays vazios
-  let fiadosPendentes = JSON.parse(localStorage.getItem(STORAGE_FIADOS_KEY)) || [];
-  let pagamentosRealizados = JSON.parse(localStorage.getItem(STORAGE_PAGAMENTOS_KEY)) || [];
-
-  // Elementos DOM
   const fiadosPendentesList = document.getElementById("fiadosPendentesList");
   const pagamentosRealizadosList = document.getElementById("pagamentosRealizadosList");
   const subtotalFiados = document.getElementById("subtotalFiados");
   const totalRecebido = document.getElementById("totalRecebido");
+
   const btnAddFiado = document.getElementById("btnAddFiado");
   const btnAddPagamento = document.getElementById("btnAddPagamento");
+
   const formModal = document.getElementById("formModal");
   const formEntrada = document.getElementById("formEntrada");
   const formTitle = document.getElementById("formTitle");
@@ -274,113 +415,247 @@
   const obsInput = document.getElementById("obsInput");
   const cancelBtn = document.getElementById("cancelBtn");
 
-  let modo = ""; // "fiado", "pagamento", "editar-fiado", "editar-pagamento"
+  const notify = document.getElementById('notify');
+  const notifyMessage = document.getElementById('notifyMessage');
+  let notifyTimeout;
+
+  let modo = ""; // "fiado" ou "pagamento" ou "editar-fiado" ou "editar-pagamento"
   let editIndex = null;
 
-  // Função para formatar valor monetário
   function formatarValor(valor) {
     return valor.toFixed(2).replace('.', ',');
   }
 
   // Salvar dados no localStorage
   function salvarDados() {
-    localStorage.setItem(STORAGE_FIADOS_KEY, JSON.stringify(fiadosPendentes));
-    localStorage.setItem(STORAGE_PAGAMENTOS_KEY, JSON.stringify(pagamentosRealizados));
+    localStorage.setItem('fiadosPendentes', JSON.stringify(fiadosPendentes));
+    localStorage.setItem('pagamentosRealizados', JSON.stringify(pagamentosRealizados));
   }
 
-  // Calcula status de pagamento: "Pago", "Pago parcial" ou ""
-  function calcularStatusPagamento(nome) {
-    const fiado = fiadosPendentes.find(f => f.nome.toLowerCase() === nome.toLowerCase());
-    const pagamento = pagamentosRealizados.find(p => p.nome.toLowerCase() === nome.toLowerCase());
-    if (!pagamento) return "";
-    if (!fiado) return "Pago";
-    if (pagamento.valor >= fiado.valor) return "Pago";
-    if (pagamento.valor < fiado.valor) return "Pago parcial";
-    return "";
+  // Carregar dados do localStorage
+  function carregarDados() {
+    const dadosFiados = localStorage.getItem('fiadosPendentes');
+    const dadosPagamentos = localStorage.getItem('pagamentosRealizados');
+    if (dadosFiados) fiadosPendentes = JSON.parse(dadosFiados);
+    if (dadosPagamentos) pagamentosRealizados = JSON.parse(dadosPagamentos);
   }
 
-  // Renderiza as listas na tela
+  // Notificação com animação
+  function showNotify(msg) {
+    if (notifyTimeout) clearTimeout(notifyTimeout);
+    notifyMessage.textContent = msg;
+    notify.style.display = 'flex';
+    setTimeout(() => {
+      notify.classList.add('show');
+    }, 10);
+    notifyTimeout = setTimeout(() => {
+      notify.classList.remove('show');
+      setTimeout(() => notify.style.display = 'none', 500);
+    }, 3500);
+  }
+
+  // Renderizar listas
   function renderizar() {
-    // Fiados Pendentes
-    if (fiadosPendentes.length === 0) {
-      fiadosPendentesList.innerHTML = '<li style="font-style:italic; color:#a0522d;">Nenhum fiado pendente.</li>';
-    } else {
-      fiadosPendentesList.innerHTML = "";
-      fiadosPendentes.forEach((item, i) => {
-        const li = document.createElement("li");
-        li.innerHTML = `
-          <div class="info">
-            <strong>${item.nome}</strong> – R$ ${formatarValor(item.valor)} ${item.obs ? `<em>${item.obs}</em>` : ''}
-          </div>
-          <button class="action-btn" title="Registrar pagamento parcial">Registrar pagamento</button>
-          <button class="action-btn" title="Editar fiado">✏️</button>
-          <button class="action-btn delete-btn" title="Excluir fiado">🗑️</button>
-        `;
-        li.querySelector("button[title='Registrar pagamento parcial']").onclick = () => registrarPagamento(i);
-        li.querySelector("button[title='Editar fiado']").onclick = () => abrirFormulario("editar-fiado", i);
-        li.querySelector("button[title='Excluir fiado']").onclick = () => {
-          if (confirm(`Excluir fiado de ${item.nome}?`)) {
-            fiadosPendentes.splice(i, 1);
-            pagamentosRealizados = pagamentosRealizados.filter(p => p.nome.toLowerCase() !== item.nome.toLowerCase());
-            salvarDados();
-            renderizar();
-          }
-        };
-        fiadosPendentesList.appendChild(li);
-      });
-    }
-    subtotalFiados.textContent = `🧾 Subtotal: R$ ${formatarValor(fiadosPendentes.reduce((acc, i) => acc + i.valor, 0))}`;
+    fiadosPendentesList.innerHTML = "";
+    pagamentosRealizadosList.innerHTML = "";
 
-    // Pagamentos Realizados
-    if (pagamentosRealizados.length === 0) {
-      pagamentosRealizadosList.innerHTML = '<li style="font-style:italic; color:#a0522d;">Nenhum pagamento realizado.</li>';
-    } else {
-      pagamentosRealizadosList.innerHTML = "";
-      pagamentosRealizados.forEach((item, i) => {
-        const statusAtual = calcularStatusPagamento(item.nome);
-        const li = document.createElement("li");
-        li.innerHTML = `
-          <div class="info">
-            <strong>${item.nome}</strong> – R$ ${formatarValor(item.valor)} ${item.obs ? `<em>${item.obs}</em>` : ''}
-          </div>
-          <div class="status ${statusAtual === "Pago parcial" ? "parcial" : statusAtual === "Pago" ? "pago" : ""}">${statusAtual || "Pago"}</div>
-          <button class="action-btn" title="Editar pagamento">✏️</button>
-          <button class="action-btn delete-btn" title="Excluir pagamento">🗑️</button>
-        `;
-        li.querySelector("button[title='Editar pagamento']").onclick = () => abrirFormulario("editar-pagamento", i);
-        li.querySelector("button[title='Excluir pagamento']").onclick = () => {
-          if (confirm(`Excluir pagamento de ${item.nome} - R$ ${formatarValor(item.valor)}?`)) {
-            pagamentosRealizados.splice(i, 1);
-            salvarDados();
-            renderizar();
-          }
-        };
-        pagamentosRealizadosList.appendChild(li);
-      });
-    }
-    totalRecebido.textContent = `💵 Total Recebido: R$ ${formatarValor(pagamentosRealizados.reduce((acc, i) => acc + i.valor, 0))}`;
+    let subtotal = 0;
+    fiadosPendentes.forEach((item, i) => {
+      subtotal += item.valor;
+      const li = document.createElement("li");
+      li.innerHTML = `
+        <div class="info"><strong>${item.nome}</strong><br><em>${item.obs || ''}</em></div>
+        <div class="status parcial">R$ ${formatarValor(item.valor)}</div>
+        <button class="action-btn" onclick="abrirEditarFiado(${i})" aria-label="Editar fiado de ${item.nome}">✏️</button>
+        <button class="action-btn" onclick="registrarPagamento(${i})" aria-label="Registrar pagamento para ${item.nome}">💰</button>
+        <button class="action-btn delete-btn" onclick="excluirFiado(${i})" aria-label="Excluir fiado de ${item.nome}">🗑️</button>
+      `;
+      fiadosPendentesList.appendChild(li);
+    });
+    subtotalFiados.textContent = `🧾 Subtotal: R$ ${formatarValor(subtotal)}`;
+
+    let totalPago = 0;
+    pagamentosRealizados.forEach((item, i) => {
+      totalPago += item.valor;
+      const li = document.createElement("li");
+      li.innerHTML = `
+        <div class="info"><strong>${item.nome}</strong><br><em>${item.obs || ''}</em></div>
+        <div class="status pago">R$ ${formatarValor(item.valor)}</div>
+        <button class="action-btn" onclick="abrirEditarPagamento(${i})" aria-label="Editar pagamento de ${item.nome}">✏️</button>
+        <button class="action-btn delete-btn" onclick="excluirPagamento(${i})" aria-label="Excluir pagamento de ${item.nome}">🗑️</button>
+      `;
+      pagamentosRealizadosList.appendChild(li);
+    });
+    totalRecebido.textContent = `💵 Total Recebido: R$ ${formatarValor(totalPago)}`;
   }
 
-  // Abre modal para adicionar/editar entradas
-  function abrirFormulario(novoModo, index = null) {
-    modo = novoModo;
-    editIndex = index;
-    formModal.style.display = "flex";
+  // Abrir modal para adicionar fiado
+  btnAddFiado.addEventListener("click", () => {
+    modo = "fiado";
+    editIndex = null;
+    formTitle.textContent = "Adicionar Fiado";
+    nomeInput.value = "";
+    valorInput.value = "";
+    obsInput.value = "";
+    abrirFormulario();
+  });
+
+  // Abrir modal para adicionar pagamento manual
+  btnAddPagamento.addEventListener("click", () => {
+    modo = "pagamento";
+    editIndex = null;
+    formTitle.textContent = "Adicionar Pagamento Manual";
+    nomeInput.value = "";
+    valorInput.value = "";
+    obsInput.value = "";
+    abrirFormulario();
+  });
+
+  function abrirFormulario() {
+    formModal.classList.add("show");
+    nomeInput.focus();
+  }
+  function fecharFormulario() {
+    formModal.classList.remove("show");
+  }
+  cancelBtn.addEventListener("click", fecharFormulario);
+
+  // Abrir editar fiado
+  function abrirEditarFiado(i) {
+    modo = "editar-fiado";
+    editIndex = i;
+    formTitle.textContent = "Editar Fiado";
+    const item = fiadosPendentes[i];
+    nomeInput.value = item.nome;
+    valorInput.value = item.valor;
+    obsInput.value = item.obs || "";
+    abrirFormulario();
+  }
+  // Abrir editar pagamento
+  function abrirEditarPagamento(i) {
+    modo = "editar-pagamento";
+    editIndex = i;
+    formTitle.textContent = "Editar Pagamento";
+    const item = pagamentosRealizados[i];
+    nomeInput.value = item.nome;
+    valorInput.value = item.valor;
+    obsInput.value = item.obs || "";
+    abrirFormulario();
+  }
+
+  // Excluir fiado
+  function excluirFiado(i) {
+    if (confirm(`Excluir fiado de ${fiadosPendentes[i].nome}?`)) {
+      fiadosPendentes.splice(i, 1);
+      salvarDados();
+      renderizar();
+      showNotify('Fiado excluído com sucesso! 🧾');
+    }
+  }
+  // Excluir pagamento
+  function excluirPagamento(i) {
+    if (confirm(`Excluir pagamento de ${pagamentosRealizados[i].nome}?`)) {
+      pagamentosRealizados.splice(i, 1);
+      salvarDados();
+      renderizar();
+      showNotify('Pagamento excluído com sucesso! 💵');
+    }
+  }
+
+  // Form submit (add/edit)
+  formEntrada.addEventListener("submit", (e) => {
+    e.preventDefault();
+    const nome = nomeInput.value.trim();
+    let valor = parseFloat(valorInput.value);
+    const obs = obsInput.value.trim();
+
+    if (!nome || isNaN(valor) || valor <= 0) {
+      alert("Preencha nome e valor corretamente!");
+      return;
+    }
 
     if (modo === "fiado") {
-      formTitle.textContent = "Adicionar Fiado (soma valores se já existir)";
-      nomeInput.value = "";
-      valorInput.value = "";
-      obsInput.value = "";
+      // Verifica se já existe e soma
+      const idxFiado = fiadosPendentes.findIndex(f => f.nome.toLowerCase() === nome.toLowerCase());
+      if (idxFiado >= 0) {
+        fiadosPendentes[idxFiado].valor += valor;
+        if (obs) {
+          fiadosPendentes[idxFiado].obs = fiadosPendentes[idxFiado].obs
+            ? fiadosPendentes[idxFiado].obs + " | " + obs
+            : obs;
+        }
+      } else {
+        fiadosPendentes.push({ nome, valor, obs });
+      }
+      showNotify(`Fiado adicionado para ${nome} + R$ ${formatarValor(valor)}`);
     } else if (modo === "pagamento") {
-      formTitle.textContent = "Adicionar Pagamento Manual (soma ao pagamento existente)";
-      nomeInput.value = "";
-      valorInput.value = "";
-      obsInput.value = "";
+      const idxPag = pagamentosRealizados.findIndex(p => p.nome.toLowerCase() === nome.toLowerCase());
+      if (idxPag >= 0) {
+        pagamentosRealizados[idxPag].valor += valor;
+        if (obs) {
+          pagamentosRealizados[idxPag].obs = pagamentosRealizados[idxPag].obs
+            ? pagamentosRealizados[idxPag].obs + " | " + obs
+            : obs;
+        }
+      } else {
+        pagamentosRealizados.push({ nome, valor, obs });
+      }
+      showNotify(`Pagamento registrado para ${nome} + R$ ${formatarValor(valor)}`);
     } else if (modo === "editar-fiado" && editIndex !== null) {
-      formTitle.textContent = "Editar Fiado";
-      const item = fiadosPendentes[editIndex];
-      nomeInput.value = item.nome;
-      valorInput.value = item.valor;
-      obsInput.value = item.obs || "";
-    } else if (modo === "editar-p
+      fiadosPendentes[editIndex] = { nome, valor, obs };
+      showNotify(`Fiado de ${nome} atualizado!`);
+    } else if (modo === "editar-pagamento" && editIndex !== null) {
+      pagamentosRealizados[editIndex] = { nome, valor, obs };
+      showNotify(`Pagamento de ${nome} atualizado!`);
+    }
+
+    salvarDados();
+    renderizar();
+    fecharFormulario();
+  });
+
+  // Registrar pagamento parcial direto do fiado pendente
+  function registrarPagamento(i) {
+    const nome = fiadosPendentes[i].nome;
+    const valorDevido = fiadosPendentes[i].valor;
+
+    let valorPagarStr = prompt(`Registrar pagamento parcial para ${nome} (valor devido R$ ${formatarValor(valorDevido)}):`, "");
+    if (valorPagarStr === null) return; // cancelou
+
+    let valorPagar = parseFloat(valorPagarStr.replace(",", "."));
+    if (isNaN(valorPagar) || valorPagar <= 0) {
+      alert("Informe um valor válido maior que zero.");
+      return;
+    }
+    if (valorPagar > valorDevido) {
+      alert("O valor do pagamento não pode ser maior que o valor devido.");
+      return;
+    }
+
+    // Adiciona pagamento
+    const idxPag = pagamentosRealizados.findIndex(p => p.nome.toLowerCase() === nome.toLowerCase());
+    if (idxPag >= 0) {
+      pagamentosRealizados[idxPag].valor += valorPagar;
+    } else {
+      pagamentosRealizados.push({ nome, valor: valorPagar, obs: "Pagamento parcial" });
+    }
+
+    // Atualiza valor do fiado pendente
+    fiadosPendentes[i].valor -= valorPagar;
+
+    if (fiadosPendentes[i].valor <= 0) {
+      fiadosPendentes.splice(i, 1);
+    }
+
+    salvarDados();
+    renderizar();
+    showNotify(`Pagamento parcial de R$ ${formatarValor(valorPagar)} registrado para ${nome}`);
+  }
+
+  // Iniciar
+  carregarDados();
+  renderizar();
+</script>
+
+</body>
+</html>
